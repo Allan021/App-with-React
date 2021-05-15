@@ -1,0 +1,68 @@
+{
+  "canales": [
+    {
+      "id": 1,
+      "nombre": "Jorge Tabet",
+      "subs": 160000,
+      "link": "https://www.youtube.com/channel/UCYay8P4evltDbXlQL3mt8fw",
+      "imageUrl": "https://powerbuildingoficial.com/wp-content/uploads/2020/11/bio02.jpg",
+      "description": "Un canal de Fisicoculturismo hecho para profesionales"
+    },
+    {
+      "id": 2,
+      "nombre": "Esttik",
+      "subs": 3000000,
+      "link": "https://www.youtube.com/user/esttikSP",
+      "imageUrl": "https://img3.codigonuevo.com/05/59/e8/esttik-930x600.jpg",
+      "description": "Canal exclusivamente creado para retos de comida"
+    },
+    {
+      "id": 3,
+      "nombre": "Pico de Oro",
+      "subs": 100000,
+      "link": "https://www.youtube.com/channel/UC4oGsbaR87FQ1b3C04ZxVwQ",
+      "imageUrl": "https://yt3.ggpht.com/RPELvTf4gBIqmq_mBmyHqhhS0Si-0fxmrOSe7aON2E9spcHOLdLGu9FWxPeB4X6_CqszXOwK7g=w640-fcrop64=1,32b75a57cd48a5a8-k-c0xffffffff-no-nd-rj",
+      "description": "Canal de criticas a los demas canales Fitness con tu calvo favorito"
+    },
+    {
+      "id": 4,
+      "nombre": "Corbacho",
+      "subs": 460000,
+      "link": "https://www.youtube.com/channel/UCYhjVssYU44DFQ-be15zwlg",
+      "imageUrl": "https://i.ytimg.com/vi/-cMOwWSY3Gg/maxresdefault.jpg",
+      "description": "Canal de Fitness y  retos de comida"
+    },
+    {
+      "id": 5,
+      "nombre": "JDalmau",
+      "subs": 810000,
+      "link": "https://www.youtube.com/channel/UCuk4lplU8fQIG7CUdJqeZ8g ",
+      "imageUrl": "https://static-cdn.jtvnw.net/jtv_user_pictures/3db3b878-d9db-461d-aba4-dc0c49115d11-profile_banner-480.png",
+      "description": "Canal de Fitness y  retos de comida pero mas chido"
+    },
+    {
+      "id": 6,
+      "nombre": "Platzi",
+      "subs": "1000000",
+      "imageUrl": "blob:http://localhost:3000/a3308106-a950-4e05-889f-6a77afb36437",
+      "link": "https://www.youtube.com/c/Platzi",
+      "description": "Canal de Aprendizaje de Tecnología y Desarrollo Personal"
+    },
+    {
+      "id": 7,
+      "nombre": "Diego Ruzzarin",
+      "subs": "340000",
+      "imageUrl": "",
+      "link": "https://www.youtube.com/channel/UC1viRct91s1a3Z5yvk7FJXw",
+      "description": "Un wey que le gusta desmentir a los falsos profetas xd"
+    },
+    {
+      "id": 8,
+      "nombre": "Leo Messi",
+      "subs": "120000",
+      "imageUrl": "https://www.semana.com/resizer/lkC7pXHB_XnMFcZ4oozUXSh6wp4=/1200x675/filters:format(jpg):quality(70)//cloudfront-us-east-1.images.arcpublishing.com/semana/6RRLKXRA45GC5FGFAX6OAXJ2UM.jpg",
+      "link": "https://www.youtube.com/channel/UCmkNr8WQC7zAC5TnYDI0wQw",
+      "description": "El canal del mejor del mundo wey"
+    }
+  ]
+}
