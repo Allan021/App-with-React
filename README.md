@@ -1,8 +1,14 @@
-# Getting Started with Create React App
+# App-with-React
+## Application that any beginner in react js could do :)
+Complete application elaborated with the basic concepts of React Js
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
+The React js concepts used are:
+- React Router
+- React State
+- Props
+- Components
+- Ajax in React
+- Login and Register
 
 In the project directory, you can run:
 
