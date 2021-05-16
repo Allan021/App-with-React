@@ -54,7 +54,7 @@ const AdminForm = () => {
   } = useForm(InitialCourse, validarInputs, "http://localhost:5000/canales");
 
   return (
-    <Form onSubmit={handleSubmit}>
+    <Form onSubmit={handleSubmit} autoComplete="off">
       <Grid container>
         <Grid item xs={12}>
           <Controls.Input

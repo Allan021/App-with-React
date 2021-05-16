@@ -1,0 +1,13 @@
+.active {
+  background-color: seagreen;
+}
+
+li > * {
+  text-decoration: none;
+  color: #171817;
+  font-size: 1.3rem;
+}
+li > *:hover {
+  color: #17181790;
+  text-decoration: underline;
+}

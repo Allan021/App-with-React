@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import {
   Grid,
   Paper,
@@ -12,8 +12,11 @@ import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import Checkbox from "@material-ui/core/Checkbox";
 import { useForm, Form } from "../../hooks/useForm";
-import { NavLink } from "react-router-dom";
+import { NavLink, Redirect, Route } from "react-router-dom";
 import Controls from "../../components/controls/Controls";
+import Loader from "../../components/Loader";
+import Message from "../../components/Message";
+import PrivatePage from "../PrivatePage";
 
 const initialLogin = {
   username: "",
@@ -40,13 +43,12 @@ const Login = () => {
     if (!form.username)
       error.username =
         "El campo username es requerido wey, o como te vas a registrar xd";
-
     else if (!RegEmail.test(form.username))
       error.username = "El nombre de usuario es incorrecto";
 
     if (!form.password) error.password = "Ingresa la contraseña wey nmms";
     else if (!RegPassword.test(form.password))
-      error.password = "La contraseña ingresada es incorrecta";
+      error.password = "La contraseña ingresada es insegura";
 
     return error;
   };
@@ -60,12 +62,36 @@ const Login = () => {
     handleSubmit,
     resetForm,
     handleBlur,
-  } = useForm(initialLogin, validarInputs, "");
+    responseState,
+    setErrors,
+  } = useForm(
+    initialLogin,
+    validarInputs,
+    "http://localhost/servidor/login.php"
+  );
+  useEffect(() => {
+    if (responseState) {
+      if (!responseState.conectado) {
+        responseState.errorU &&
+          setErrors({
+            ...errors,
+            username: responseState.errorU,
+          });
 
+        responseState.errorP &&
+          setErrors({
+            ...errors,
+            password: responseState.errorP,
+          });
+      }
+    }
+
+    return (e) => resetForm();
+  }, [responseState]);
   return (
     <Grid>
       <Paper elevation={10} style={paperStyle}>
-        <Form onSubmit={handleSubmit}>
+        <Form onSubmit={(e) => handleSubmit(e, "php")}>
           <Grid align="center">
             <Avatar style={avatarStyle}>
               <LockOutlinedIcon />
@@ -112,6 +138,20 @@ const Login = () => {
               <Link>Registrate</Link>
             </NavLink>
           </Typography>
+          {loading && <Loader />}
+
+          {responseState !== null && responseState.conectado && (
+            <>
+              <Route path="/content">
+                <PrivatePage data={responseState.data} />
+              </Route>
+
+              <Redirect
+                to="/content"
+                children={<PrivatePage data={responseState.data} />}
+              />
+            </>
+          )}
         </Form>
       </Paper>
     </Grid>

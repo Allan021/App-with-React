@@ -9,6 +9,9 @@ import SupervisorAccountIcon from "@material-ui/icons/SupervisorAccount";
 import PersonAddIcon from "@material-ui/icons/PersonAdd";
 import AttachMoneyIcon from "@material-ui/icons/AttachMoney";
 import InfoIcon from "@material-ui/icons/Info";
+import PublicIcon from "@material-ui/icons/Public";
+import FormatAlignCenterIcon from "@material-ui/icons/FormatAlignCenter";
+import AttachmentIcon from "@material-ui/icons/Attachment";
 const Lista = ({ classes }) => {
   return (
     <List>
@@ -49,6 +52,25 @@ const Lista = ({ classes }) => {
         path="/login"
         icon={<PermContactCalendarIcon />}
         text="Login"
+      />{" "}
+      <Item
+        classes={classes}
+        path="/privadas"
+        icon={<PublicIcon />}
+        text="Paginas Privadas"
+      />{" "}
+      <Item
+        classes={classes}
+        path="/friends"
+        icon={<FormatAlignCenterIcon />}
+        text="Paginas Anidadas"
+      />
+      <Divider />
+      <Item
+        classes={classes}
+        path="/agregar"
+        icon={<AttachmentIcon />}
+        text="Agregar Fotografias"
       />
     </List>
   );

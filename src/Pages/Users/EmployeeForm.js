@@ -2,11 +2,12 @@ import React, { useState, useEffect } from "react";
 import { Grid } from "@material-ui/core";
 import Controls from "../../components/controls/Controls";
 import { useForm, Form } from "../../hooks/useForm";
-
+import Loader from "../../components/Loader"
+import Message from "../../components/Message";
 const genderItems = [
-  { id: "Masculino", title: "Masculino" },
-  { id: "Femenino", title: "Femenino" },
-  { id: "Otro", title: "Otro" },
+  { id: "masculino", title: "Masculino" },
+  { id: "femenino", title: "Femenino" },
+  { id: "otro", title: "Otro" },
 ];
 
 const initialFValues = {
@@ -16,11 +17,12 @@ const initialFValues = {
   email: "",
   telefono: "",
   ciudad: "",
-  genero: "Masculino",
+  genero: "masculino",
   hireDate: new Date(),
   isPermanent: false,
 };
 
+const urlPhp = "http://localhost/servidor/";
 export default function EmployeeForm() {
   const validar = (form) => {
     let error = {};
@@ -66,10 +68,11 @@ export default function EmployeeForm() {
     handleKeyUp,
     resetForm,
     handleBlur,
-  } = useForm(initialFValues, validar, "");
+    responseState,
+  } = useForm(initialFValues, validar, urlPhp);
 
   return (
-    <Form onSubmit={handleSubmit}>
+    <Form onSubmit={(e) => handleSubmit(e, "php")}>
       <Grid container>
         <Grid item xs={6}>
           <Controls.Input
@@ -130,8 +133,8 @@ export default function EmployeeForm() {
         </Grid>
         <Grid item xs={6}>
           <Controls.RadioGroup
-            name="genero "
-            label="Genero"
+            name="genero"
+            label="Seleccione su genero"
             value={form.genero}
             onChange={handleChange}
             items={genderItems}
@@ -162,6 +165,15 @@ export default function EmployeeForm() {
           </div>
         </Grid>
       </Grid>
+
+      {loading && <Loader />}
+
+      {responseState != null && (
+        <Message
+          msj={responseState.statusText}
+          bgcolor={!responseState.err ? "#5cb85c" : "#d9534f"}
+        />
+      )}
     </Form>
   );
 }

@@ -16,10 +16,15 @@ import Divider from "@material-ui/core/Divider";
 import Lista from "./Lista";
 import Channel from "../templates/Channel";
 import Productos from "../Pages/Productos";
+import PaginaPublica from "../Pages/PaginaPublica";
+import Freinds from "../Pages/Freinds";
+import AgregaImagen from "../Pages/AgregaImagen";
+import PrivatePage from "../Pages/PrivatePage";
+
 
 const Contenedor = (props) => {
   const { window } = props;
-    const [channels, setChannels] = useState(null);
+  const [channels, setChannels] = useState(null);
 
   const container =
     window !== undefined ? () => window().document.body : undefined;
@@ -79,7 +84,11 @@ const Contenedor = (props) => {
             <Switch>
               <Route path="/" exact component={Home} />
               <Route path="/about" component={About} />
-              <Route path="/canales/:id" exact children={<Channel data={channels} />} />
+              <Route
+                path="/canales/:id"
+                exact
+                children={<Channel data={channels} />}
+              />
               <Route
                 path="/canales"
                 children={
@@ -88,10 +97,14 @@ const Contenedor = (props) => {
               />
 
               <Route path="/login" component={Login} />
-              <Route path='/productos' component={Productos}/>
-              
+              <Route path="/productos" component={Productos} />
+
               <Route path="/admin" component={Admin} />
               <Route path="/register" component={Contact} />
+              <Route path="/privadas" component={PaginaPublica} />
+              <Route path="/friends" component={Freinds} />
+              <Route path="/agregar" component={AgregaImagen} />
+              <Route path="/content" component={PrivatePage} />
               <Route path="*" component={Error404} />
             </Switch>
           </main>
