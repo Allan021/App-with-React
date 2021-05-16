@@ -9,6 +9,6 @@ The React js concepts used are:
 - Components
 - Ajax in React
 - Login and Register
-- 
+ 
 
 
